@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         fetch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fname = fnm.getText().toString();
+                lname = lnm.getText().toString();
                 db = FirebaseFirestore.getInstance().collection("Users").document(fname.substring(0,3)+lname.substring(0,3));
                 db.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
